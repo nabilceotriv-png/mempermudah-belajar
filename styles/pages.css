@@ -1,0 +1,92 @@
+/* TaskMate — Halaman spesifik */
+
+/* Dashboard */
+.greeting-card {
+  background: linear-gradient(135deg, rgba(96,165,250,.10), rgba(96,165,250,.02));
+  border: 1px solid rgba(96,165,250,.25);
+}
+:root[data-theme="light"] .greeting-card {
+  background: linear-gradient(135deg, rgba(37,99,235,.08), rgba(37,99,235,.02));
+}
+.deadline-item {
+  display: flex; align-items: center; gap: var(--sp-3);
+  padding: var(--sp-3) 0; border-bottom: 1px solid var(--border);
+}
+.deadline-item:last-child { border-bottom: none; }
+.deadline-time {
+  font-size: var(--fs-xs); font-weight: 700; color: var(--warning);
+  background: var(--warning-soft); border-radius: 7px; padding: 5px 8px;
+  text-align: center; min-width: 62px; flex-shrink: 0; line-height: 1.25;
+}
+.deadline-time.overdue { color: var(--danger); background: var(--danger-soft); }
+
+.activity-item { display: flex; gap: var(--sp-3); padding: var(--sp-2) 0; align-items: flex-start; }
+.activity-icon {
+  width: 28px; height: 28px; border-radius: 8px; flex-shrink: 0;
+  display: grid; place-items: center; background: var(--card-2); border: 1px solid var(--border); color: var(--muted);
+}
+
+/* Detail tugas */
+.detail-grid { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); gap: var(--sp-4); align-items: start; }
+@media (max-width: 900px) { .detail-grid { grid-template-columns: minmax(0, 1fr); } }
+.detail-rows { display: flex; flex-direction: column; }
+.detail-row {
+  display: flex; justify-content: space-between; gap: var(--sp-4);
+  padding: 10px 0; border-bottom: 1px solid var(--border); font-size: var(--fs-sm);
+}
+.detail-row:last-child { border-bottom: none; }
+.detail-row .k { color: var(--muted); flex-shrink: 0; }
+.detail-row .v { text-align: right; font-weight: 600; word-break: break-word; }
+
+.back-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  color: var(--muted); font-size: var(--fs-sm); font-weight: 600;
+  background: none; border: none; cursor: pointer; padding: 0; margin-bottom: var(--sp-3);
+}
+.back-link:hover { color: var(--primary); text-decoration: none; }
+
+/* Mata pelajaran */
+.subject-card { display: flex; flex-direction: column; gap: var(--sp-3); }
+.subject-color-bar { height: 4px; border-radius: 999px; margin: calc(var(--sp-4) * -1) calc(var(--sp-4) * -1) 0; }
+.subject-actions { display: flex; gap: var(--sp-2); margin-top: auto; }
+
+/* Pengingat */
+.reminder-item { display: flex; align-items: flex-start; gap: var(--sp-3); padding: var(--sp-3) var(--sp-4); border-bottom: 1px solid var(--border); }
+.reminder-item:last-child { border-bottom: none; }
+.reminder-icon { width: 36px; height: 36px; border-radius: 10px; display: grid; place-items: center; flex-shrink: 0; background: var(--primary-soft); color: var(--primary); }
+.reminder-icon.off { background: var(--card-2); color: var(--muted); }
+.reminder-icon.sent { background: var(--success-soft); color: var(--success); }
+
+/* Kalender */
+.cal-toolbar { display: flex; align-items: center; gap: var(--sp-2); flex-wrap: wrap; }
+.cal-toolbar .cal-month { font-weight: 700; font-size: var(--fs-md); min-width: 170px; text-align: center; }
+.cal-layout { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); gap: var(--sp-4); align-items: start; }
+@media (max-width: 1080px) { .cal-layout { grid-template-columns: minmax(0, 1fr); } }
+
+/* Pengaturan */
+.settings-layout { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: var(--sp-5); align-items: start; }
+@media (max-width: 900px) { .settings-layout { grid-template-columns: minmax(0, 1fr); } }
+.settings-nav { display: flex; flex-direction: column; gap: 2px; }
+@media (max-width: 900px) { .settings-nav { flex-direction: row; overflow-x: auto; padding-bottom: 4px; } }
+.settings-nav .nav-item { white-space: nowrap; }
+
+.data-table-wrap { overflow-x: auto; border: 1px solid var(--border); border-radius: var(--radius); }
+.data-table { width: 100%; border-collapse: collapse; font-size: var(--fs-sm); min-width: 560px; }
+.data-table th {
+  text-align: left; padding: 10px var(--sp-3); background: var(--card-2);
+  color: var(--muted); font-size: var(--fs-xs); text-transform: uppercase; letter-spacing: .04em;
+  border-bottom: 1px solid var(--border);
+}
+.data-table td { padding: 10px var(--sp-3); border-bottom: 1px solid var(--border); }
+.data-table tr:last-child td { border-bottom: none; }
+.data-table tbody tr:hover { background: var(--card-2); }
+
+/* Pagination */
+.pagination { display: flex; align-items: center; justify-content: space-between; gap: var(--sp-3); margin-top: var(--sp-4); flex-wrap: wrap; }
+
+/* Auth pages extras */
+.reset-token-box {
+  font-family: ui-monospace, "Cascadia Mono", Consolas, monospace;
+  font-size: var(--fs-sm); background: var(--bg); border: 1px dashed var(--border);
+  padding: var(--sp-3); border-radius: var(--radius-sm); word-break: break-all; color: var(--text);
+}

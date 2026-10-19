@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="color-scheme" content="dark light" />
+  <meta name="description" content="TaskMate — Pengingat Tugas Siswa" />
+  <meta name="theme-color" content="#0B1020" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#F8FAFC" media="(prefers-color-scheme: light)" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="TaskMate" />
+  <meta name="format-detection" content="telephone=no" />
+  <title>TaskMate — Pengingat Tugas Siswa</title>
+  <link rel="manifest" href="./manifest.webmanifest" />
+  <link rel="icon" type="image/png" sizes="192x192" href="./icons/icon-192.png" />
+  <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png" />
+  <link rel="stylesheet" href="./styles/tokens.css" />
+  <link rel="stylesheet" href="./styles/base.css" />
+  <link rel="stylesheet" href="./styles/layout.css" />
+  <link rel="stylesheet" href="./styles/components.css" />
+  <link rel="stylesheet" href="./styles/pages.css" />
+</head>
+<body>
+  <a class="skip-link" href="#konten">Lompat ke konten</a>
+
+  <div id="app" class="app-shell" hidden>
+    <aside id="sidebar" class="sidebar" aria-label="Navigasi utama"></aside>
+    <div class="sidebar-overlay" id="sidebar-overlay" hidden></div>
+    <div class="app-main">
+      <header id="header" class="app-header"></header>
+      <main id="konten" class="app-content" tabindex="-1"></main>
+    </div>
+  </div>
+
+  <div id="auth-root" hidden></div>
+  <div id="overlay-root"></div>
+  <div id="toast-root" class="toast-root" role="status" aria-live="polite"></div>
+
+  <noscript>
+    <div style="padding:24px;font-family:sans-serif;color:#F8FAFC;background:#0B1020">
+      TaskMate membutuhkan JavaScript untuk berjalan. Mohon aktifkan JavaScript di peramban Anda.
+    </div>
+  </noscript>
+
+  <script type="module" src="./js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="id">
+<head><meta charset="UTF-8"><title>Cek Modul TaskMate</title></head>
+<body>
+<pre id="out">Memeriksa…</pre>
+<script type="module">
+const mods = [
+  '/js/utils/misc.js','/js/utils/date.js','/js/utils/dom.js','/js/utils/validation.js',
+  '/js/store/db.js','/js/store/local-adapter.js','/js/store/supabase-adapter.js','/js/store/index.js',
+  '/js/features/task-domain.js',
+  '/js/services/auth.js','/js/services/tasks.js','/js/services/subjects.js','/js/services/reminders.js','/js/services/settings.js',
+  '/js/ui/toast.js','/js/ui/dialog.js','/js/ui/states.js','/js/ui/task-card.js','/js/ui/task-filters.js','/js/ui/task-form.js',
+  '/js/ui/subject-card.js','/js/ui/reminder-card.js','/js/ui/calendar.js','/js/ui/notification-center.js','/js/ui/sidebar.js','/js/ui/header.js',
+  '/js/pages/auth.js','/js/pages/dashboard.js','/js/pages/tasks.js','/js/pages/task-form-page.js','/js/pages/task-detail.js',
+  '/js/pages/reminders.js','/js/pages/subjects.js','/js/pages/calendar.js','/js/pages/settings.js',
+  '/js/app/theme.js','/js/router.js','/js/app.js',
+];
+const out = document.getElementById('out');
+const results = [];
+for (const m of mods) {
+  try { await import(m); results.push(`OK   ${m}`); }
+  catch (e) { results.push(`FAIL ${m} :: ${e.message}`); }
+}
+out.textContent = results.join('\n');
+window.__MODCHECK__ = results;
+</script>
+</body>
+</html>

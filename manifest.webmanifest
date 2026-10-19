@@ -1,0 +1,25 @@
+{
+  "name": "TaskMate — Pengingat Tugas Siswa",
+  "short_name": "TaskMate",
+  "description": "Kelola tugas sekolah, tenggat, dan pengingat waktu dalam satu aplikasi.",
+  "id": "/",
+  "start_url": "/index.html",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#0B1020",
+  "theme_color": "#0B1020",
+  "lang": "id",
+  "dir": "ltr",
+  "categories": ["productivity", "education"],
+  "icons": [
+    { "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/icons/maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    { "name": "Tambah Tugas", "url": "/index.html#/tugas/baru", "description": "Catat tugas baru dengan cepat" },
+    { "name": "Daftar Tugas", "url": "/index.html#/tugas", "description": "Lihat semua tugas harian" },
+    { "name": "Kalender", "url": "/index.html#/kalender", "description": "Lihat jadwal tugas per tanggal" }
+  ]
+}
